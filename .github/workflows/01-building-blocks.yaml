@@ -3,16 +3,19 @@ on:
   - push
 
 jobs:
-  my-first-job:
+  echo-hello:
     runs-on: ubuntu-latest
     steps:
-      - name:
-        run: echo "Say, Hello!"
+      - name: Say Hello
+        run: echo "Hello World!"
     
-  my-seocond-job:
+  echo-goodbye:
     runs-on: ubuntu-latest
-    needs: my-first-job
-    steps:
-      - name: Failed step
-        run: echo "goodbye"
+    steps: 
+      - name: Failed Step
+        run: |
+          echo "I will fail"
+          exit 1
+      - name: Say Goodbye
+        run: echo "Goodbye!"
 
