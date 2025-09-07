@@ -8,4 +8,4 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@v4
             - name: Print Folder
-              run: ls -la
+              run: ls
