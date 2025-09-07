@@ -8,5 +8,5 @@ jobs:
             - name: build
               uses: actions/checkout@v3
             - name: Print Folder
-                run: |
-                  echo "Folder Name: ${{ github.workspace }}"
+              run: |
+                echo "Folder Name: ${{ github.workspace }}"
