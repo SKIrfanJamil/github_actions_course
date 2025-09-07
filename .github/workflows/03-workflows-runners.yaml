@@ -1,0 +1,19 @@
+name: 03-worflows-runners
+on:
+    - workflow_dispatch
+jobs:
+    ubuntu-echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Say Hello from Ubuntu
+              run: echo "Hello from Ubuntu!"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: Say Hello from Windows
+              run: echo "Hello from Windows!"
+    macos-echo:
+        runs-on: macos-latest
+        steps:
+            - name: Say Hello from macOS
+              run: echo "Hello from macOS!"
