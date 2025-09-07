@@ -5,8 +5,7 @@ jobs:
     using-actions:
         runs-on: ubuntu-latest
         steps:
-            - name: build
-              uses: actions/checkout@v3
+            - name: Checkout Repo
+              uses: actions/checkout@v4
             - name: Print Folder
-              run: |
-                echo "Folder Name: ${{ github.workspace }}"
+              run: ls -la
