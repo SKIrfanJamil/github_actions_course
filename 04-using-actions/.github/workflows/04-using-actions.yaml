@@ -1,0 +1,12 @@
+name: 04 - Using Actions
+on:
+    - workflow_dispatch
+jobs:
+    using-actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build
+              uses: actions/checkout@v3
+            - name: Print Folder
+                run: |
+                  echo "Folder Name: ${{ github.workspace }}"
