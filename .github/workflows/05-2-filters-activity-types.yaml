@@ -1,0 +1,18 @@
+name: 05 2 Filters Activity Types
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+    filters-activity-types:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+        - name: Show PR Event Info
+          run: |
+            echo "The pull request was ${{ github.event.action }}"
+            echo "The PR title is ${{ github.event.pull_request.title }}"
+            echo "The PR body is ${{ github.event.pull_request.body }}"
+            echo "The PR was created by ${{ github.event.pull_request.user.login }}"
+            echo "The PR has ${{ github.event.pull_request.additions }} additions and ${{ github.event.pull_request.deletions }} deletions"
