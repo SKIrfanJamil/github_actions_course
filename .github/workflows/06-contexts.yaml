@@ -1,0 +1,25 @@
+name: 06-contexts
+on:
+    - push
+    - workflow_dispatch
+
+jobs:
+    contexts:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+            - name: Show Context Info
+              run: |
+                echo "The event that triggered the workflow is ${{ github.event_name }}"
+                echo "The workflow is ${{ github.workflow }}"
+                echo "The actor that triggered the workflow is ${{ github.actor }}"
+                echo "The SHA of the commit that triggered the workflow is ${{ github.sha }}"
+                echo "The repository is ${{ github.repository }}"
+                echo "The ref that triggered the workflow is ${{ github.ref }}"
+                echo "The job ID is ${{ github.job }}"
+                echo "The run number is ${{ github.run_number }}"
+                echo "The run ID is ${{ github.run_id }}"
+                echo "The base ref is ${{ github.base_ref }}"
+                echo "The head ref is ${{ github.head_ref }}"
+                echo "The event payload is ${{ toJson(github.event) }}"
