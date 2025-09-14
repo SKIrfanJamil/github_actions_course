@@ -1,0 +1,26 @@
+name: 07 GitHub Expressions
+on:
+    push:
+    workflow_dispatch:
+        inputs:
+            debug:
+                type: boolean
+                default: false
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Test
+              if: github.event_name == 'push'
+              run: | 
+                echo "Triggerd by ${{github.actor}}                
+                echo "The Branch Name is ${{ github.branch }}"
+                echo "The Commit is ${{ github.commit }}"
+                echo "The Runner Os is ${{ runner.os }}"
+
+            - name: [debug] Print when triggered from main
+              if: ${{ inputs.debug == true }} && github.branch == 'main'
+              run: echo "I was triggered from main"
+            - name: Greeting
+              run: |
+                echo "Hello, world!"
