@@ -18,7 +18,7 @@ jobs:
                 echo "The Commit is ${{ github.commit }}"
                 echo "The Runner Os is ${{ runner.os }}"
 
-            - name: [debug] Print when triggered from main
+            - name: Print when triggered from main
               if: ${{ inputs.debug == true }} && github.branch == 'main'
               run: echo "I was triggered from main"
             - name: Greeting
